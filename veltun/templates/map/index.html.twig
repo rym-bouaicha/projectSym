@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id='map' style='width: 100%; height: 500px;'></div>
+
+    <script>
+        import mapboxgl from "leaflet";
+
+        mapboxgl.accessToken = '{{ pk.eyJ1IjoicnltYm91YWljaGEiLCJhIjoiY2xncnV6d3RuMTQxNjNobXIzMnF5a284NyJ9.m0q3S2My7FPWyaC6NRKU6g }}';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [{{ longitude }}, {{ latitude }}],
+            zoom: 10
+        });
+
+        var marker = new mapboxgl.Marker()
+            .setLngLat([{{ longitude }}, {{ latitude }}])
+            .addTo(map);
+    </script>
+
+{% endblock %}

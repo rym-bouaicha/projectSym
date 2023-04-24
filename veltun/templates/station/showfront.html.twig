@@ -1,0 +1,34 @@
+{% extends 'base.front.html.twig' %}
+
+{% block title %}Station{% endblock %}
+
+{% block body %}
+    <br><br>
+    <h1>Station</h1>
+
+    <table class="table">
+        <tbody>
+
+            <tr>
+                <th>NomStation</th>
+                <td>{{ station.nomStation }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ station.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ station.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Gouvernorat</th>
+                <td>{{ station.gouvernorat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_station_indexfront') }}">back to list</a>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+index:
+    path: /
+#    controller: App\Controller\DefaultController::index
+
+charts:
+    path: /charts
+    controller: App\Controller\RackveloController::charts
+
+map:
+    path: /map
+    controller: App\Controller\MapController::index

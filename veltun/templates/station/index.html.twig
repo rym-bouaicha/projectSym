@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Station index{% endblock %}
+
+{% block body %}
+    <h1>Create a new Station </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Station id</th>
+                <th>Station name</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Gouvernorat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for station in stations %}
+            <tr>
+                <td>{{ station.idStation }}</td>
+                <td>{{ station.nomStation }}</td>
+                <td>{{ station.longitude }}</td>
+                <td>{{ station.latitude }}</td>
+                <td>{{ station.gouvernorat }}</td>
+                <td>
+                    <a href="{{ path('app_station_show', {'idStation': station.idStation}) }}">Details</a>
+                    <a href="{{ path('app_station_edit', {'idStation': station.idStation}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_station_new') }}">Create new</a>
+{% endblock %}

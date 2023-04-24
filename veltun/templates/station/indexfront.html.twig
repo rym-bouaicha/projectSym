@@ -1,0 +1,43 @@
+{% extends 'base.front.html.twig' %}
+
+{% block title %}Station index{% endblock %}
+
+{% block body %}
+    <br><br>
+    <div class="align-content-center">
+    <h1 style="color: #9a6e3a" class="text-center">Choose a departure station</h1>
+        <br>
+    <table class="table" style ="width:200px" class="align-center"  >
+        <thead>
+
+            <tr>
+                <th style="color:#0dcaf0" >Nom Station</th>
+                <th style="color:#0dcaf0">Longitude</th>
+                <th style="color:#0dcaf0">Latitude</th>
+                <th style="color:#0dcaf0">Gouvernorat</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+        {% for station in stations %}
+            <tr>
+                <td>{{ station.nomStation }}</td>
+                <td>{{ station.longitude }}</td>
+                <td>{{ station.latitude }}</td>
+                <td>{{ station.gouvernorat }}</td>
+                <td>
+                    <a href="{{ path('app_station_showfront', {'idStation': station.idStation}) }}" style="color: #0dcaf0">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Rackvelo{% endblock %}
+
+{% block body %}
+    <h1>Edit Rackvelo</h1>
+
+    {{ include('rackvelo/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_rackvelo_index') }}">back to list</a>
+
+    {{ include('rackvelo/_delete_form.html.twig') }}
+{% endblock %}

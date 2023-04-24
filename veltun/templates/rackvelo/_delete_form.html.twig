@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_rackvelo_delete', {'refRack': rackvelo.refRack}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rackvelo.refRack) }}">
+    <button class="btn">Delete</button>
+</form>

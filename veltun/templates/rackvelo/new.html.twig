@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Rackvelo{% endblock %}
+
+{% block body %}
+    <h1>Add a new Rack</h1>
+
+    {{ include('rackvelo/_form.html.twig') }}
+
+    <a href="{{ path('app_rackvelo_index') }}">back to list</a>
+{% endblock %}
